@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<nav class="sidebar sidebar-open" th:fragment="nav-sidebar">
+		<ul class="nav nav-pills">
+			<li class="nav-item"><a class="nav-link " href="/"> <i
+					class="oi oi-home"></i> <span th:text="#{sidebar.link.home}"></span>
+			</a></li>
+		</ul>
+	
+		<ul class="nav nav-pills">
+			<li class="nav-item"><span class="nav-link active" th:text="#{sidebar.title.department}"></span></li>
+			<li class="nav-item">
+				<a class="nav-link" th:href="@{/departments/create}"> 
+					<i class="oi oi-plus"></i> 
+					<span th:text="#{sidebar.link.create}"></span>
+				</a>
+			</li>
+			<li class="nav-item"><a class="nav-link"
+				th:href="@{/departments/list}"> <i class="oi oi-spreadsheet"></i> <span th:text="#{sidebar.link.list}"></span>
+			</a></li>
+		</ul>
+
+		<ul class="nav nav-pills">
+			<li class="nav-item"><span class="nav-link active" th:text="#{sidebar.title.role}"></span></li>
+			<li class="nav-item">
+				<a class="nav-link" th:href="@{/roles/create}"}>
+					<i class="oi oi-plus"></i> 
+					<span th:text="#{sidebar.link.create}"></span>
+				</a>
+			</li>
+			<li class="nav-item"><a class="nav-link" href="/roles/list">
+					<i class="oi oi-spreadsheet"></i> <span th:text="#{sidebar.link.list}"></span>
+			</a></li>
+		</ul>
+
+		<ul class="nav nav-pills">
+			<li class="nav-item"><span class="nav-link active" th:text="#{sidebar.title.employee}"></span></li>
+			<li class="nav-item"><a class="nav-link"
+				th:href="@{/employees/create}"> <i class="oi oi-plus"></i> <span th:text="#{sidebar.link.create}"></span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link" th:href="@{/employees/list}">
+					<i class="oi oi-spreadsheet"></i> <span th:text="#{sidebar.link.list}"></span>
+			</a></li>
+		</ul>
+	</nav>
+
+</body>
+</html>
