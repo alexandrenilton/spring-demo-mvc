@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "department")
-public class Department extends AbastractEntity<Long>{
+public class Department extends AbastractEntity<Long> { // "id" vai ser do tipo Long
 	
 	@NotBlank(message = "Inform a name")
 	@Size(min =3, max=60, message = "The name should have between {min} and {max} caracters")
