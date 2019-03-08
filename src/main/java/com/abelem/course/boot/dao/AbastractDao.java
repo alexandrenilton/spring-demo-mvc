@@ -10,6 +10,9 @@ import javax.persistence.TypedQuery;
 
 public abstract class AbastractDao<T, PK extends Serializable> {
 	
+	
+	@SuppressWarnings("unchecked")
+	/* pega a entityClass assinada como T na declaração da classe*/
 	private final Class<T> entityClass = 
 				(Class<T>) ( (ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
 	

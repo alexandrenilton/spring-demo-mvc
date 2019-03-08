@@ -10,10 +10,10 @@ import javax.persistence.MappedSuperclass;
 
 @SuppressWarnings("serial")
 @MappedSuperclass
-public class AbastractEntity<ID extends Serializable> implements Serializable {
+public abstract class AbastractEntity<ID extends Serializable> implements Serializable {
 	
 	@Id 
-	@GeneratedValue(strategy = GenerationType.IDENTITY) 
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //if you use mysql, IDENTITY = AutoIncrement
 	private ID id;
 
 	public ID getId() {
