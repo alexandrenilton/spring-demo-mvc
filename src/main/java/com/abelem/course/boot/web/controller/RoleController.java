@@ -32,21 +32,21 @@ public class RoleController {
 	
 	@GetMapping("/create")
 	public String create(Role role) {
-		return "/roles/create";
+		return "roles/create";
 	}
 	
 	@GetMapping("/list")
 	public String list(ModelMap modelMap) {
 		List<Role> roles = roleService.findAll();
 		modelMap.addAttribute("roles", roles);
-		return "/roles/list";
+		return "roles/list";
 	}
 	
 	@PostMapping("/save") /*o BindingResult e @Valid, verificar se houve erro de validacoes */
 	public String save(@Valid Role role, BindingResult bindingResult, RedirectAttributes attr) {
 		
 		if (bindingResult.hasErrors()) {
-			return "/roles/create" ;
+			return "roles/create" ;
 		}
 		
 		roleService.save(role);

@@ -47,21 +47,21 @@ public class EmployeeController {
 	
 	@GetMapping("/create")
 	public String create(Employee employee) {
-		return "/employees/create";
+		return "employees/create";
 	}
 	
 	@GetMapping("/list")
 	public String list(ModelMap modelMap) {
 		List<Employee> employees = employeeService.findAll();
 		modelMap.addAttribute("employees", employees);
-		return "/employees/list";
+		return "employees/list";
 	}
 	
 	@PostMapping("/save")
 	public String save(@Valid Employee employee, BindingResult bindingResult, RedirectAttributes attr) {
 		
 		if (bindingResult.hasErrors()) {
-			return "/employees/create" ;
+			return "employees/create" ;
 		}
 		
 		employeeService.save(employee);
@@ -99,13 +99,13 @@ public class EmployeeController {
 	@GetMapping("/find/name")
 	public String findByName(@RequestParam("name") String name, ModelMap modelMap) {
 		modelMap.addAttribute("employees", employeeService.findByName(name));
-		return "/employees/list";
+		return "employees/list";
 	}
 	
 	@GetMapping("/find/role")
 	public String findByRole(@RequestParam("id") Long roleId, ModelMap modelMap) {
 		modelMap.addAttribute("employees", employeeService.findByRole(roleId));
-		return "/employees/list";
+		return "employees/list";
 	}
 	
 	@GetMapping("/find/date")
@@ -113,7 +113,7 @@ public class EmployeeController {
 							  @RequestParam("out") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate out,
 							  ModelMap modelMap) {
 		modelMap.addAttribute("employees", employeeService.findByDates(in, out));
-		return "/empoloyees/list";
+		return "empoloyees/list";
 	}
 	
 	/* 
